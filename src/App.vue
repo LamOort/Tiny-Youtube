@@ -1,26 +1,114 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div className="app-wrapper">
+    <div className="header">
+      <SearchBar />
+    </div>
+    <div className="row">
+      <VideoDetail />
+      <VideoList />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+//Libs
+
+//Components
+import SearchBar from "./components/SearchBar.vue";
+import VideoList from "./components/VideoList.vue";
+import VideoDetail from "./components/VideoDetail.vue";
 
 export default {
   name: "App",
+
   components: {
-    HelloWorld,
+    SearchBar,
+    VideoList,
+    VideoDetail,
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+head {
+  display: none;
+}
+
+body {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* CSS Reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+form,
+label,
+table,
+tbody,
+thead,
+tr,
+th,
+td,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none !important;
+}
+
+a,
+a:hover,
+a:focus {
+  cursor: pointer;
+  text-decoration: none;
+
+  color: inherit;
+}
+
+#app {
+  width: 100%;
+}
+
+.hidden-sm {
+  @media only screen and (max-width: 991px) {
+    display: none !important;
+  }
+}
+
+.hidden-lg {
+  @media only screen and (min-width: 992px) {
+    display: none !important;
+  }
+}
+
+.app-wrapper {
+  padding: 0 80px;
+  max-width: 1760px;
+  margin: 0 auto;
+}
+
+.header {
+  padding-top: 50px;
 }
 </style>
