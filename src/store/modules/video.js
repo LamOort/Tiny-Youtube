@@ -16,9 +16,13 @@ const getters = {};
 //actions
 const actions = {
   searchVideos({ commit, state }, searchTerm) {
+    //Reset responseStatus
+    commit("setResponseStatus", "");
+
     videoAPI
       .getVideosFromAPI(searchTerm)
-      .then((res) => commit("setVideosToStore", res.data.items));
+      .then((res) => commit("setVideosToStore", res.data.items))
+      .catch((err) => commit("setResponseStatus", err));
   },
 
   selectVideo({ commit, state }, videoId) {
@@ -43,6 +47,7 @@ const mutations = {
 
 export default {
   state,
+  getters,
   mutations,
   actions,
 };
