@@ -2,7 +2,7 @@
   <ul className="list-group col-md-4">
     <VideoItem
       className="list-group-item"
-      v-for="video in videos || []"
+      v-for="video in videos"
       :key="video.etag"
       :video="video"
     >

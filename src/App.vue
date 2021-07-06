@@ -90,18 +90,6 @@ a:focus {
   width: 100%;
 }
 
-.hidden-sm {
-  @media only screen and (max-width: 991px) {
-    display: none !important;
-  }
-}
-
-.hidden-lg {
-  @media only screen and (min-width: 992px) {
-    display: none !important;
-  }
-}
-
 .app-wrapper {
   padding: 0 80px;
   max-width: 1760px;

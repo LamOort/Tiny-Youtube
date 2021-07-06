@@ -2,8 +2,6 @@ import videoAPI from "../../api/video";
 
 /**
  * Initialize state related to Video module.
- * Type: Videos: Video[]
- *       Video: {}
  */
 
 const state = {
